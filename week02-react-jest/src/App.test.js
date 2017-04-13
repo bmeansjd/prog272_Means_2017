@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './App';
+import {shallow} from 'enzyme'
 
-describe('jest test', function() {
+describe('jReact Jest Suite', function() {
 
-    it('renders without crashing', () => {
+    it('renders without out App component without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<App />, div);
     });
@@ -14,9 +15,9 @@ describe('jest test', function() {
         const welcome = <h2>Welcome to Prog 272</h2>;
         expect(wrapper.contains(welcome)).toEqual(true);
     });
+see pictures to finih this
 
-
-    t('renders button click message', () => {
+   it ('renders button click message', () => {
         const wrapper = shallow(<App />);
         const nineSign = <p className="App-intro">Nine: 9</p>;
         wrapper.find('button.elf').simulate('click');

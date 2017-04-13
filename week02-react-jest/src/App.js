@@ -9,13 +9,17 @@ class App extends Component {
         this.state = {
             nine: '0',
             firstName: 'Brenda',
-            lastName:'Means'
+            lastName:''
         };
 
         bar = () => {
 
 
-            this.setState({nine: '9'})
+            this.setState({
+                nine: '9',
+                firstName: 'Brenda',
+                lastName: 'Means'
+            })
 
         };
         render();
