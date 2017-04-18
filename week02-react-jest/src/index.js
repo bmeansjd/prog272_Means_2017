@@ -19,7 +19,7 @@ ReactDOM.render(
     <div>
     <Elfheader/>
         <App/>
-        <Address firstName: 'foobar'/>
+        <Address firstName: "foobar"/>
 
 
   </div>,
