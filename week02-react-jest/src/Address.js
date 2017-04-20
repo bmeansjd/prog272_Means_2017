@@ -7,36 +7,37 @@ import './App.css';
 
 class Address extends Component {
 
-    constructor() {
+    constructor(props) {
         super(props);
-        console.logs(props);
+
+        console.logs('TEST PROPS',props);
+        if (!this.propsaddress){
+        throw "no props in Address. You mut pass n props";
+    }
+    //console.log( )
         this.state = {
-            firstName: this.props.firstName,
-            lastName: 'unknown'
+            aFirstName: this.props.address[index].firstName,
+            lastName: this.props.address.lastName
         }
     }
 
     getAddress = () => {
         this.setState({
-            firstName: 'Carly',
-            lastName: 'bar'
+            firstName: 'Brenda',
+            lastName: 'Means'
 
 
         })
     };
 
-
     render() {
-        return (
-            <div className="App">
+        return <div className="App">
 
-                <p className="App-intro">
-                    firstName:{this.state.firstName}
-                </p>
-                <button className="getAddress" onClick={this.getAddress}>"Get Address"</button>
-            </div>
-
-        )
+            <p className="App-intro">
+                firstName:{this.state.firstName}
+            </p>
+            <button className="getAddress" onClick={this.getAddress}>"Get Address"</button>
+        </div>
     };
 }
 export default Address

@@ -1,7 +1,7 @@
 /**
  * Created by bcuser on 4/17/17.
  */
-import logo from '../logo.svg';
+import logo from '../multipicture.svg';
 import React, {component} from 'react';
 import'./App,css';
 

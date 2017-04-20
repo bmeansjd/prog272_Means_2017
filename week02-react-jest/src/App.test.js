@@ -2,6 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from './App';
 import {shallow} from 'enzyme'
+import addresses from './address-list'
+
+
+
 
 describe('jReact Jest Suite', function() {
 
@@ -11,11 +15,12 @@ describe('jReact Jest Suite', function() {
     });
 
     it('renders and reads H1 text', () => {
-        const wrapper = shallow(<App />);
+        const wrapper = shallow(<Address address ={addresses[0]}/>);
         const welcome = <h2>Welcome to Prog 272</h2>;
+        getFirst(wrapper);
         expect(wrapper.contains(welcome)).toEqual(true);
     });
-see pictures to finih this
+//see pictures to finih this
 
    it ('renders button click message', () => {
         const wrapper = shallow(<App />);

@@ -28,17 +28,12 @@ class App extends Component {
         }
         return (
             <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome to Prog 272</h2>
-                </div>
+
                 <p className="App-intro">
                     Nine:{this.state.nine}
                 </p>
-                <p className="App-intro">
-                    firstName:{this.state.firstName}
-                </p>
-                <button onClick={this.bar}>Get Nine</button>
+
+                <button className="elf" onClick={this.getNine}>Get Nine</button>
 
             </div>
         );

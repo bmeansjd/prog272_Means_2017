@@ -7,11 +7,7 @@
     "react-dom": "^15.5.4"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "enzyme": "^2.8.1",
-=======
     "enzyme": "^2.8.2",
->>>>>>> dd5e5cb3d307d76d0220a211832f1405eb747dd9
     "react-addons-test-utils": "^15.5.1",
     "react-scripts": "0.9.5",
     "react-test-renderer": "^15.5.4"
