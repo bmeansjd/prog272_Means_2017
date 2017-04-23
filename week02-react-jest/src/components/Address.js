@@ -3,20 +3,24 @@
  */
 import React, {Component} from 'react';
 //import logo from './logo.svg';
-import './App.css';
+// TODO: Cleaned up this import
+import '../App.css';
 
 class Address extends Component {
 
     constructor(props) {
         super(props);
 
-        console.logs('TEST PROPS',props);
-        if (!this.propsaddress){
-        throw "no props in Address. You mut pass n props";
-    }
-    //console.log( )
+        // TODO It is console.log, not console.logs
+        console.log('TEST PROPS', props);
+        // TODO: Missing period after this.props:
+        if (!this.props.address) {
+            //TODO: throw new error and instead of string
+            throw new Error("ELF: no props in Address. You mut pass n props");
+        }
+        //console.log( )
         this.state = {
-            aFirstName: this.props.address[index].firstName,
+            aFirstName: this.props.address.firstName,
             lastName: this.props.address.lastName
         }
     }
@@ -40,6 +44,7 @@ class Address extends Component {
         </div>
     };
 }
+
 export default Address
 
 

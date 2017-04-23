@@ -1,28 +1,25 @@
-
+// TODO: Charlie added React from 'react'
+import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import Address from './components/Address';
 import './index.css';
 import Elfheader from './components/Elfheader';
-import addresses from './address-list'
+//import addresses from './address-list'
 
-
-
-var address =
-{
-
-    firstName : 'unknown',
-    lastName : 'unknown'
-};
+var address = {
+        firstName: 'unknown',
+        lastName: 'unknown'
+    };
 
 ReactDOM.render(
     <div>
-    <Elfheader/>
+        <Elfheader/>
         <App/>
-        <Address address={address[0]}/>
+        <Address address={address}/>
 
 
-  </div>,
+    </div>,
 
-  document.getElementById('root')
+    document.getElementById('root')
 );
