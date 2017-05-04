@@ -20,7 +20,7 @@ class Address extends Component {
             lastName: this.props.address.lastName
         }
     }
-
+/*
     getAddress = () => {
         this.setState({
             firstName: 'Brenda',
@@ -28,7 +28,7 @@ class Address extends Component {
 
 
         })
-    };
+    };*/
 
     render() {
         return <div className="App">
