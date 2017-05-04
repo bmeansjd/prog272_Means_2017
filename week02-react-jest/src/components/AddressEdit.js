@@ -2,7 +2,7 @@ import React from 'react';
 import Address from '../components/Address';
 import { mount } from 'enzyme';
 
-import addresses from '../address-list';
+import addresses from './../Address-List';
 import '../css/index.css';
  import { shallow } from 'enzyme';
 const address = addresses[0];
