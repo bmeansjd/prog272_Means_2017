@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { App } from '/components/App';
 import {shallow} from 'enzyme'
-
+import {App} from './App';
 describe('jReact Jest Suite', function() {
 
 
@@ -10,6 +10,7 @@ describe('jReact Jest Suite', function() {
         const div = document.createElement('div');
         ReactDOM.render(<App />, div);
     });
+
 
 
     it('renders and reads H2 text', () => {
