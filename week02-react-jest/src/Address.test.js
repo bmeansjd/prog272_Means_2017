@@ -12,12 +12,10 @@
 
 
 
-/*
+
 
 
 import React, {Component} from 'react';
-//import logo from './logo.svg';
-// TODO: Cleaned up this import
 import '../App.css';
 
 class Address extends Component {
@@ -61,8 +59,8 @@ class Address extends Component {
 
 export default Address
 
-/!*
 
+/*
 it('expects true to be true', function() {
     expect(true).toBe(true);
 })*!/

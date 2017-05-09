@@ -3,23 +3,22 @@
  */
 import React, {Component} from 'react';
 
-import '../App.css';
+import 'css/App.css';
 
 class Address extends Component {
 
     constructor(props) {
         super(props);
-
-
         console.log('TEST PROPS', props);
 
         if (!this.props.address) {
 
-            throw new Error("ELF: no props in Address. You mut pass n props");
+            throw new Error("No props in Address. You mut pass n props");
         }
         console.log( )
+        const index = 0
         this.state = {
-            aFirstName: this.props.address.firstName,
+            firstName: this.props.address.firstName,
             lastName: this.props.address.lastName
         }
     }
@@ -42,6 +41,7 @@ class Address extends Component {
             <button className="getAddress" onClick={this.getAddress}>"Get Address"</button>
         </div>
     };
+
 }
 
 export default Address
