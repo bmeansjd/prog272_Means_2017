@@ -14,12 +14,22 @@ var address = {
 
 ReactDOM.render(
     <div>
+<<<<<<< HEAD:CongressAddress/src/index.js
         <Elfheader/>
         <App/>
         <Address address={address}/>
+=======
+    <Elfheader/>
+        <ElfMenu/>
+>>>>>>> LastCompleteRepo:week02-react-jest/src/components/index.js
 
 
+<<<<<<< HEAD:CongressAddress/src/index.js
     </div>,
 
     document.getElementById('root')
 );
+=======
+  document.getElementById('root')
+);
+>>>>>>> LastCompleteRepo:week02-react-jest/src/components/index.js
