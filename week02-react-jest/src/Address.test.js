@@ -1,6 +1,12 @@
 /**
  * Created by bcuser on 5/7/17.
  */
+<<<<<<< HEAD
+
+it('expects true to be true', function() {
+    expect(true).toBe(true);
+});
+=======
 /**
  * Created by bcuser on 4/17/17.
  */
@@ -65,3 +71,4 @@ it('expects true to be true', function() {
     expect(true).toBe(true);
 })*!/
 */
+>>>>>>> master

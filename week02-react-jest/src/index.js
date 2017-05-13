@@ -8,9 +8,15 @@ import Elfheader from './components/Elfheader';
 //import addresses from './address-list'
 
 var address = {
+<<<<<<< HEAD
+        firstName: 'unknown',
+        lastName: 'unknown'
+    };
+=======
     firstName: 'unknown',
     lastName: 'unknown'
 };
+>>>>>>> master
 
 ReactDOM.render(
     <div>
@@ -22,4 +28,8 @@ ReactDOM.render(
     </div>,
 
     document.getElementById('root')
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> master
