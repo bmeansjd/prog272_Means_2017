@@ -2,10 +2,10 @@
  * Created by bcuser on 4/17/17.
  */
 import logo from '../logo.svg';
-import React, {component} from 'react';
-import'./App,css';
+import React, {Component} from 'react';
+import'../App.css';
 
-class Elfheader extends component {
+class Elfheader extends Component {
 
     render() {
 

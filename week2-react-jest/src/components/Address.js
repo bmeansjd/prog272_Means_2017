@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import Address from './components/Address'
-import addresses from '../Address-list';
+import React,{Component}from 'react';
+//import ReactDOM from 'react-dom';
+//import App from './App';
+import addresses from '../address-list';
 import '../index.css';
+//import '../App.css';
 
 
 class Address extends Component {

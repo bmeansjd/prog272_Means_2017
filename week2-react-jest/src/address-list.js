@@ -7,13 +7,7 @@ import App from './components/App';
 import Address from './components/Address'
 import './index.css';
 
-ReactDOM.render(
-    <div>
-        <App />
-        <Address/>
-    </div>,
-    document.getElementById('root')
-);
+
 
 
 const unknown = 'unknown';
