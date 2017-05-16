@@ -8,7 +8,6 @@ class App extends Component {
 
         this.state = {
             nine: '0',
-            firstName: 'unknown'
 
         };
     }
@@ -16,14 +15,8 @@ class App extends Component {
 
     getNine = () => {
         this.setState({
-            nine: '9'
-        })
-    };
+            nine: '9',
 
-    setAddress = () => {
-        this.setState({
-            firstName: 'Brenda',
-            lastName: 'Means'
         })
     };
 
@@ -31,11 +24,10 @@ class App extends Component {
         return (
             <div className="App">
 
-                <p className="App-intro">
-                    firstName: {this.state.firstName}
-
+                <p className='App-intro'>
+                    Nine: {this.state.nine}
                 </p>
-                <button className="setAddress" onClick={this.setAddress}>Set Address</button>
+                <button className="elf" onClick={this.getNine}>Get Nine</button>
             </div>
         )
     };
