@@ -1,11 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './components/App';
 import { shallow } from 'enzyme';
+import Header from './components/Header';
 
+const getLast = (wrapper) => {
+    const ninep = wrapper.find('p').last().debug();
+    console.log(ninep);
+};
 
+const getFirst = (wrapper) => {
+    const ninep = wrapper.find('p').first().debug();
+    console.log(ninep);
+};
 
 describe('React Jest Suite', function () {
+
+    it('renders and reads H1 text', () => {
+        const wrapper = shallow(<Header />);
+        const welcome = <h2>Welcome to React</h2>;
+        expect(wrapper.contains(welcome)).toEqual(true);
+    });
 
     it('renders without our App component without crashing', () => {
         const div = document.createElement('div');

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Address from './components/Address'
-import './index.css';
+import Address from './Address'
+import '../index.css';
 
 ReactDOM.render(
     <div>
