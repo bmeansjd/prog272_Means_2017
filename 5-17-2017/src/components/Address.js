@@ -1,19 +1,17 @@
 import React,{Component}from 'react';
-//import ReactDOM from 'react-dom';
-//import App from './App';
-import addresses from '../address-list';
-//import './css/index.css';
-
-//import '../App.css';
-
+// TODO: Find index.css with correct relative path
+import '../css/index.css';
 
 class Address extends Component {
-
 
     constructor(props) {
         super(props);
 
-        console.log('ADDRESS PROPS', typeof this.props);
+        // TODO: Throw exception if addressList is undefined
+        if (!this.props.addressList) {
+            throw new Error('Elf error, no addressList in ' + this.constructor.name);
+        }
+
         const address = this.props.addressList[0];
         this.state = {
             firstName: address.firstName,
@@ -42,19 +40,23 @@ class Address extends Component {
         })
     };
 
-
+    // TODO: Use an ID not a className to identify this button
     render() {
         return (
             <div className="App">
-
                 <p className="App-intro">
                     firstName: {this.state.firstName}
-
                 </p>
-                <button className="setAddress" onClick={this.setAddress}>Set Address</button>
+
+                <button id="setAddress" onClick={this.setAddress}>Set Address</button>
+
             </div>
         )
     };
 }
 
 export default Address;
+
+
+
+

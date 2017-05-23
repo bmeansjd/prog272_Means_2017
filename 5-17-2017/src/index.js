@@ -5,7 +5,8 @@ import Address from './components/Address';
 import Header from './components/Header';
 import addresses from './address-list';
 //import './css/index.css';
-import logo from './images/logo.svg';
+// TODO: Remove unused
+//import logo from './images/logo.svg';
 
 ReactDOM.render(
     <div>

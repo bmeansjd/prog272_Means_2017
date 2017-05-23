@@ -1,10 +1,15 @@
 /**
  * Created by bcuser on 5/15/17.
  */
+
+// TODO: Remove unused
+/*
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import Address from './components/Address'
+*/
 import './css/index.css';
 
 
