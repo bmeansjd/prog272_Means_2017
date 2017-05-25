@@ -29,7 +29,7 @@ getAddress = () => {
     })
 };
 
-    render() {
+    render(){
         return
         if (!this.quiet) { console.log("ADDRESS RENDER"); }
         return (
@@ -43,7 +43,7 @@ getAddress = () => {
 
             </div>
         );
-    }
+    };
 }
 export default Address
 

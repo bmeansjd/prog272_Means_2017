@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from '../src/components/App';
@@ -50,6 +51,16 @@ describe('React Jest Suite', function () {
         const wrapper = shallow(<App />);
         const welcome = <p className="App-intro">firstName: unknown</p>;
         expect(wrapper.contains(welcome)).toEqual(true);
+    });
+
+});*/
+// TODO: This file no longer does anything. App.js has been deleted. This test file can be deleted as well.
+// TODO: The code that was in this file has been moved to Address.test.js
+
+describe('React Jest Suite', function () {
+
+    it('proves true is true', function() {
+        expect(true).toBe(true);
     });
 
 });

@@ -4,9 +4,6 @@ import React,{Component}from 'react';
 import addresses from '../address-list';
 import '../css/index.css';
 //import '../App.css';
-import  AddressEdit from './AddressEdit';
-import Address from './Address';
-import AddressShow from './AddressShow';
 
 
 class AddressShow extends Component {
@@ -20,9 +17,14 @@ class AddressShow extends Component {
 
 
     render() {
-        if (!this.quiet) { console.log("ADDRESS RENDER"); }
+        this.log("SHOW ADDRESS RENDER");
+
         return (
             <div className="App">
+                <p className="App-intro">
+                    firstName: {this.props.address.firstName}
+                </p>
+
                 <AddressEdit
                     address={this.state.address}
                     onAddressChange={this.onAddressChange}
@@ -32,6 +34,7 @@ class AddressShow extends Component {
                     address={this.state.address}
                     onAddressChange={this.onAddressChange}
                 />
+
             </div>
         );
     }

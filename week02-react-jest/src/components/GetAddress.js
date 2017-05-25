@@ -34,7 +34,7 @@ const open = (i === 0) ? '[\n\t{' : '\t{';
 console.log(open);
 
 writeIt('"firstName":', json.objects[i].person.firstname);
-
+writeIt('"lastName":', json.objects[i].person.lastname);
 // AND SO ON
 
 const close = i < jsonLength - 1 ? '\t},' : '\t}\n]';

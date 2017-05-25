@@ -12,8 +12,12 @@ class Address extends Component {
     constructor(props) {
         super(props);
 
+
+       /* logger.log ('Constructor called')
+
         console.log('ADDRESS PROPS', typeof this.props);
         const address = this.props.addressList[0];
+        var unknown = 'UNKNOWN';
         this.state = {
             firstName: address.firstName,
             lastName: address.lastName,
@@ -32,11 +36,12 @@ class Address extends Component {
             if (!addressCount) {
                 throw new Error('Cannot get address count in address.js');
             }
-            that.addressCount = addressCount;
-        });
+            that.addressCount = addressCount;*/
+
     }
 
 
+/*
 
     setAddress = () => {
         const address = this.props.addressList[1];
@@ -52,12 +57,15 @@ class Address extends Component {
             website: address.website
         })
     };
+*/
 
 
     render() {
+        logger.log ('ADDRES RENDER')
+        if (!this.quiet)
         return (
-            <div className="App">
-
+            <div AddressShow>
+                address={this.state.address}
                 <p className="App-intro">
                     firstName: {this.state.firstName}
 

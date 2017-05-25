@@ -19,24 +19,15 @@ class ElfMenu extends Component {
 
     render() {
         return (
-            <Router>
-
-                <div>
-                    <div className="App">
+           <div>
+               <div className="App">
                         <ul>
                             <li><Link to="/">AddressShow</Link></li>
                             <li><Link to="/edit">AdressEdit</Link></li>
                             <li><Link to="/small">SmallNumbers</Link></li>
                         </ul>
                     </div>
-
-                    <<Route path='/small' component={SmallNumbers}/>
-                    <Route exact path="/" component={Address}/>
-                    <Route path="/edit" component={AddressChanger}/>
-
-                </div>
-
-            </Router>
+           </div>
         );
     }
 }

@@ -1,10 +1,17 @@
 /**
+ * Created by bcuser on 5/24/17.
+ */
+/**
  * Created by bcuser on 5/15/17.
  */
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
-import Address from './components/Address'
+
+// TODO: Remove unused
+/*
+ import React from 'react';
+ import ReactDOM from 'react-dom';
+ import App from './components/App';
+ import Address from './components/Address'
+ */
 import './css/index.css';
 
 

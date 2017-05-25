@@ -8,6 +8,8 @@
     "**/scripts/**",
     "**/bower_components/**",
     "**/address-list.js",
-    "**/mock-user-info.js"
+    "**/addresses.json",
+    "**/mock-user-info.js",
+    "**/mock-data.js"
   ]
 }

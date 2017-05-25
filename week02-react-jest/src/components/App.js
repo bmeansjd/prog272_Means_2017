@@ -1,35 +1,40 @@
+
 import React, {Component} from 'react';
 import '../css/App.css';
 
-class App extends Component {
+ import React, {Component} from 'react';
+ import '../css/App.css';
 
-    constructor() {
-        super();
-        this.state = {
-            nine: '0'
-        };
-    }
 
-    bar = () => {
+ class App extends Component {
+ constructor() {
+ super();
 
-        this.setState({
-            nine: '9',
+ this.state = {
+ nine: '0',
 
-        })
+ };
+ }
 
-    };
 
-    render() {
-        return (
-            <div className="App">
-                <p>className="App-intro">
-                    Nine:{this.state.nine}
-                </p>
-                <button className="elf" onClick={this.getNine}>Get Nine</button>
-            </div>
-        );
-    }
+ getNine = () => {
+ this.setState({
+ nine: '9',
 
-}
+ })
+ };
 
-export default App;
+ render() {
+ return (
+ <div className="App">
+
+ <p className='App-intro'>
+ Nine: {this.state.nine}
+ </p>
+ <button className="elf" onClick={this.getNine}>Get Nine</button>
+ </div>
+ )
+ };
+ }
+
+ export default App;
