@@ -1,6 +1,9 @@
-import React,{Component}from 'react';
+import React, {Component}from 'react';
 // TODO: Find index.css with correct relative path
 import '../css/index.css';
+import 'whatwg-fetch';
+import ElfLogger from './elf-logger';
+const logger = new ElfLogger();
 
 class Address extends Component {
 
@@ -39,6 +42,24 @@ class Address extends Component {
             website: address.website
         })
     };
+
+    fetchAddress = () => {
+        const that = this;
+
+        fetch('./addresses.json').then(function(data) {
+            const addresses = data.json();
+            console.log(addresses);
+            return addresses;
+        }).then(function (data) {
+            console.log(JSON.stringify(data, null, 4));
+            that.addresses = data;
+            that.setLocalStorage();
+        }).catch(function (err) {
+            logger.log(err);
+        })
+
+    };
+
 
     // TODO: Use an ID not a className to identify this button
     render() {
