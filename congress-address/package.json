@@ -1,0 +1,22 @@
+{
+  "name": "congress-address",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "devDependencies": {
+    "react-addons-test-utils": "^15.5.1",
+    "react-scripts": "1.0.6",
+    "react-test-renderer": "^15.5.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

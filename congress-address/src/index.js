@@ -1,18 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-/*
+import Header from './components/ElfHeader';
 import App from './components/App';
-import Address from './components/Address';
-*/
-import Header from './components/Header';
+import Address from './components/Address'
+import registerServiceWorker from './registerServiceWorker';
+import './index.css';
 import addresses from './address-list';
-//import './css/index.css';
-// TODO: Remove unused
-//import logo from './images/logo.svg';
 
 ReactDOM.render(
     <div>
         <Header/>
+        <Address addressList={addresses} />
     </div>,
     document.getElementById('root')
 );
