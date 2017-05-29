@@ -35,7 +35,7 @@ class AddressShow extends Component {
                     onAddressChange={this.onAddressChange}
                 />
             </div>);
-        
+
         logger.log("SHOW ADDRESS RENDER");
 
         return (
