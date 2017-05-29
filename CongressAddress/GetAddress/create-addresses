@@ -1,0 +1,5 @@
+#! /bin/bash
+
+curl https://www.govtrack.us/api/v2/role?current=true > govtrack-address.json
+node get-address.js > address-list.json
+# node get-address.js > ../CongressAddress/public/address-list.json
