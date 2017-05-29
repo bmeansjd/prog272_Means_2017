@@ -1,8 +1,9 @@
 import AddressEdit from './AddressEdit';
 import SmallNumbers from './SmallNumbers';
- import ElfHeader from './ElfHeader';
- import ElfMenu from './ElfMenu';
+import ElfHeader from './ElfHeader';
+import ElfMenu from './ElfMenu';
 import Address from './Address';
+import AddressChanger from './AddressChanger';
 import React, {Component} from 'react';
 import {
     BrowserRouter as Router,
@@ -36,15 +37,18 @@ import {
                     <ElfHeader/>
                     <ElfMenu/>
                     <div>
-                        <Route exact path ='/' render ={(props(
-                            <Address {props}
+                        <Route exact path ='/' render = {(props) => (
+                            <Address {...props}
                                onAddressChange={this.onAddressChange}
-                               onNameChange={this.onNameChange}
+                               onNameChange={this.onNameChange} />
+                        )}/>
 
                         <Route exact path='/' component={Address}/>
                         <Route path='/edit' component={AddressChanger}/>
-                        <Route path='/small' component={SmallNumbers}/></div></div>DIV>
-                </Router></div>
+                        <Route path='/small' component={SmallNumbers}/>
+                    </div>
+                    </div>
+                </Router>
 
 
 

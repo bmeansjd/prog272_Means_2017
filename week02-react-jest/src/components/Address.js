@@ -1,17 +1,21 @@
 import React,{Component}from 'react';
 //import ReactDOM from 'react-dom';
 //import App from './App';
-import addresses from '../address-list';
-import '../index.css';
+import addresses from '../Address-List';
+import AddressShow from './AddressShow';
+import '../css/index.css';
 //import '../App.css';
-
+import Logger from '../assets/elf-logger';
+const logger = new Logger('address');
 
 class Address extends Component {
 
 
     constructor(props) {
         super(props);
-
+        this.state = {
+            address: {}
+        }
 
        /* logger.log ('Constructor called')
 
@@ -61,11 +65,13 @@ class Address extends Component {
 
 
     render() {
-        logger.log ('ADDRES RENDER')
+        logger.log ('ADDRES RENDER');
         if (!this.quiet)
         return (
-            <div AddressShow>
-                address={this.state.address}
+            <div>
+                <AddressShow
+                    address={this.state.address}
+                />
                 <p className="App-intro">
                     firstName: {this.state.firstName}
 

@@ -2,36 +2,32 @@
  * Created by bcuser on 4/17/17.
  */
 import React from 'react';
-import Addres from 'react';
-import ElfHeader from './components/ElfHeader';
-import ElfMenu from './components/ElfMenu';
-
-
-ReactDOM.render(
-    <div>
-        <ElfHeader />
-        <ElfMenu/>
-    </div>,
-    document.getElementById('root')
-);
-
+import ReactDOM from 'react-dom';
+import Address from './Address';
+import AddressEdit from './AddressEdit';
+import ElfHeader from './ElfHeader';
+import ElfMenu from './ElfMenu';
 
 class AddressChanger extends Address {
 
-   //lots of stuff to go here
+    constructor(props) {
+        super(props);
+        this.state = {
+            address: {}
+        }
+    }
 
-
+    getAddress = () => {
+        this.setState({
+            address: {}
+        });
     };
 
-getAddress = () => {
-    this.setState({
-        address: address
-    })
-};
+    render() {
 
-    render(){
-        return
-        if (!this.quiet) { console.log("ADDRESS RENDER"); }
+        if (!this.quiet) {
+            console.log("ADDRESS RENDER");
+        }
         return (
 
             <div className="App">

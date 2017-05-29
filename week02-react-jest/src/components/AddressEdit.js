@@ -4,38 +4,35 @@
 import React,{Component}from 'react';
 //import ReactDOM from 'react-dom';
 //import App from './App';
-import addresses from '../address-list';
+import addresses from '../Address-List';
 import '../css/index.css';
 //import '../App.css';
 
-/*
- class AddressShow extends Component {
- constructor(props) {
- super(props);
- console.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
- }
- */
-onNameChange = (event) => {
-    this.log("ON NAME CHANGE");
-    const address = addresses[this.addressIndex];
-    switch (event.target.id) {
-        case 'elfFN':
-            address.firstName = event.target.value;
-            break;
-        case 'elfLN':
-            address.lastName = event.target.value;
-            break;
-        // ETC
-        default:
-            throw new Error('OH NO BAD CASE in Address onNameChange');
+
+class AddressShow extends Component {
+     constructor(props) {
+        super(props);
+        console.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
     }
-    this.setState({
-        address: address
-    })
-};
+
+    onNameChange = (event) => {
+        this.log("ON NAME CHANGE");
+        const address = addresses[this.addressIndex];
+        switch (event.target.id) {
+            case 'elfFN':
+                address.firstName = event.target.value;
+                break;
+            case 'elfLN':
+                address.lastName = event.target.value;
+                break;
+            // ETC
+            default:
+                throw new Error('OH NO BAD CASE in Address onNameChange');
+        }
+    }
 
     render(){
-        this.log("SHOW ADDRESS RENDER");
+        console.log("SHOW ADDRESS RENDER");
 
         return (
             <div className="App">
@@ -48,6 +45,6 @@ onNameChange = (event) => {
             </div>
         );
         }
-}
 
+};
 export default AddressShow;
