@@ -6,8 +6,8 @@
  *
  * Initialize it like this:
  *
-   import ElfDebugEnzyme from '../ElfDebugEnzyme';
-  const elfDebugEnzyme = new ElfDebugEnzyme(true, 'Foo.test.js');
+ import ElfDebugEnzyme from '../ElfDebugEnzyme';
+ const elfDebugEnzyme = new ElfDebugEnzyme(true, 'Foo.test.js');
  *
  * And then use it:
  *

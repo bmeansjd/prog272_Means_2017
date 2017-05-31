@@ -1,9 +1,8 @@
 /**
  * Created by bcuser on 4/17/17.
  */
-import logo from '../images/dice.svg';
+import logo from '../images/logo.svg';
 import React, {Component} from 'react';
-
 import'../css/App.css';
 
 class Elfheader extends Component {
@@ -23,4 +22,4 @@ class Elfheader extends Component {
             ;
     }
 }
-export default Elfheader;;
+export default Elfheader;
