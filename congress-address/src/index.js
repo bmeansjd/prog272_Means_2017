@@ -1,9 +1,10 @@
+/*
 import React from 'react';
 import ReactDOM from 'react-dom';
-/*
+/!*
  import App from './components/App';
  import Address from './components/Address';
- */
+ *!/
 import Header from './components/Header';
 import addresses from './address-list';
 //import './css/index.css';
@@ -13,6 +14,19 @@ import addresses from './address-list';
 ReactDOM.render(
     <div>
         <Header/>
+    </div>,
+    document.getElementById('root')
+);*/
+import React from 'react';
+import ReactDOM from 'react-dom';
+import DataMaven from './components/DataMaven';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+ReactDOM.render(
+    <div>
+        <Router>
+            <DataMaven/>
+        </Router>
     </div>,
     document.getElementById('root')
 );

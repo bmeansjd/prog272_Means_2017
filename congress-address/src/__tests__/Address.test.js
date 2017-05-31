@@ -5,6 +5,8 @@ import Address from '../components/Address';
 import { shallow } from 'enzyme';
 // TODO: You need addresses so you can pass props to Address
 import addresses from '../address-list';
+jest.mock('whatwg-fetch');
+
 
 describe('React Jest Suite', function () {
 

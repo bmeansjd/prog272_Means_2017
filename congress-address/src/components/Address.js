@@ -5,6 +5,9 @@ import 'whatwg-fetch';
 import ElfLogger from './elf-logger';
 const logger = new ElfLogger();
 
+
+
+
 class Address extends Component {
 
     constructor(props) {
@@ -13,6 +16,29 @@ class Address extends Component {
         // TODO: Throw exception if addressList is undefined
         if (!this.props.addressList) {
             throw new Error('Elf error, no addressList in ' + this.constructor.name);
+
+            import DataLoader from './DataLoader';
+            const dataLoader = new DataLoader();
+/*
+// Code ommitted here.
+// Then, in the constructor:
+            constructor(props) {
+                super(props);
+                logger.log('Constructor called');
+                //localStorage.clear();
+
+                this.addressIndex = 0;
+
+                const that = this;
+                dataLoader.loadAddresses(function(addressCount) {
+                    if (!addressCount) {
+                        throw new Error('Cannot get address count in address.js');
+                    }
+                    that.addressCount = addressCount;
+                });
+                // AND SO ON
+            }*/
+
         }
 
         const address = this.props.addressList[0];
