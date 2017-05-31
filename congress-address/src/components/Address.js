@@ -3,11 +3,43 @@ import React, {Component}from 'react';
 import '../css/index.css';
 import 'whatwg-fetch';
 import ElfLogger from './elf-logger';
+import AddressShow from '../AddressShow';
+import addresses from '../address-list';
+import '../css/App.css';
+import{
+    saveToLocalStorage,
+    clearLocalstorage,
+    getLocalStorage} from '../assests/elf-local-storage';
+
+
+
+import DataLoader from './DataLoader';
+const dataLoader = new DataLoader();
 const logger = new ElfLogger();
 
+class Address extends Component {
+    constructor (props) {
+        super(props);
+
+        this.addressIndex = 0;
+        //this.saveAddress(addresses);
+
+        const address =addresses[this.addressesIndex];
+        addresses.forEach(function(address){
+            saveToLocalStorage(address);
+        });
+
+        this.state = {
+            address : address
+        };
+        this.quiet =true;
+        this.onAddressChange = this.onAddressChange.bind(this);
+
+    }
 
 
 
+/*
 class Address extends Component {
 
     constructor(props) {
@@ -16,9 +48,8 @@ class Address extends Component {
         // TODO: Throw exception if addressList is undefined
         if (!this.props.addressList) {
             throw new Error('Elf error, no addressList in ' + this.constructor.name);
+*/
 
-            import DataLoader from './DataLoader';
-            const dataLoader = new DataLoader();
 /*
 // Code ommitted here.
 // Then, in the constructor:
@@ -39,9 +70,9 @@ class Address extends Component {
                 // AND SO ON
             }*/
 
-        }
+       /* }*/
 
-        const address = this.props.addressList[0];
+    const address = this.props.addressList[0];
         this.state = {
             firstName: address.firstName,
             lastName: address.lastName,
@@ -52,7 +83,7 @@ class Address extends Component {
             phone: address.phone,
             website: address.website
         }
-    }
+
 
     setAddress = () => {
         const address = this.props.addressList[1];
@@ -88,7 +119,7 @@ class Address extends Component {
 
 
     // TODO: Use an ID not a className to identify this button
-    render() {
+    render(){
         return (
             <div className="App">
                 <p className="App-intro">
@@ -99,7 +130,7 @@ class Address extends Component {
 
             </div>
         )
-    };
+    }
 }
 
 export default Address;

@@ -1,4 +1,4 @@
-/*import AddressEdit from './AddressEdit';
+import AddressEdit from './AddressEdit';
 import SmallNumbers from './SmallNumbers';
 import ElfHeader from './ElfHeader';
 import ElfMenu from './ElfMenu';
@@ -15,12 +15,12 @@ class DataMaven extends Component {
 
 
 
-    /!*it('renders and displays a Router', () => {
+    it('renders and displays a Router', () => {
      const wrapper = shallow(<DataMaven  />);
      elfDebug.getAll(wrapper);
      var router = wrapper.find('Router');
      expect(router.length).toEqual(1);
-     });*!/
+     });
 
 
     render() {

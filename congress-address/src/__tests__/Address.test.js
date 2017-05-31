@@ -5,10 +5,16 @@ import Address from '../components/Address';
 import { shallow } from 'enzyme';
 // TODO: You need addresses so you can pass props to Address
 import addresses from '../address-list';
+import React, {Component}from 'react';
+
+
 jest.mock('whatwg-fetch');
 
 
+
 describe('React Jest Suite', function () {
+
+
 
     // TODO: Move getLast and getFirst inside call to describe
     const getLast = (wrapper) => {
