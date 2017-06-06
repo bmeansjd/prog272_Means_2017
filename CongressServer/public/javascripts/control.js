@@ -19,15 +19,20 @@ $(document).ready(function() { 'use strict';
 
     $('#insertValidData').click(insertCollection);
 
-    $("#getAll").click(function() {
+    function getAll() {
         $.getJSON('/all-data', function(result) {
-            router.get('/bar', function(request, response) {
-                response.status(200).send({result: 'bar'});
-            });
+            collection = result.allData;
             $('#display').html(JSON.stringify(result, null, 4));
-            router.get('/bar', function(request, response) {
-                response.status(200).send({result: 'bar'});
-            });
         })
-    });
+            .done(function() {
+                console.log('second success');
+            })
+            .fail(function(error) {
+                alert(JSON.stringify(error.responseJSON, null, 4));
+            })
+            .always(function() {
+                console.log('finished');
+            });
+    }
+
 });
