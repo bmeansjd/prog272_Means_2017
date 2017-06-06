@@ -3,17 +3,18 @@ import React, {Component}from 'react';
 import '../css/index.css';
 import 'whatwg-fetch';
 import ElfLogger from './elf-logger';
-import AddressShow from '../AddressShow';
-import addresses from '../address-list';
+import AddressShow from './AddressShow';
+import addresses from './address-list';
+import GetAddresses from 'get-address';'
 import '../css/App.css';
 import{
     saveToLocalStorage,
     clearLocalstorage,
-    getLocalStorage} from '../assests/elf-local-storage';
+    getLocalStorage} from '../assets/elf-local-storage';
 
 
 
-import DataLoader from './DataLoader';
+import DataLoader from 'assets/DataLoader';
 const dataLoader = new DataLoader();
 const logger = new ElfLogger();
 
