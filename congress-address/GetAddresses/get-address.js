@@ -2,7 +2,7 @@
  * Created by bcuser on 5/22/17.
  */
 var fs=require("fs");
-var debug = require('debug')('get-address');
+var debug = require('debug')('git-convert');
 
 debug('Testing debug');
 
@@ -38,7 +38,7 @@ const open = (i === 0) ? '[\n\t{' : '\t{';
 console.log(open);
 
 // PUT DOUBLE QUOTES AROUND YOUR PROPERTY NAMES
-writeIt('"firstName":', json.objects[i].person.firstname);
+writeIt("firstName", json.objects[i].person.firstname);
 
 // AND SO ON
 
@@ -54,10 +54,7 @@ function getAddress(value, char) {
 
 function getZip(value, char) {
     'use strict';
-    // YOU WRITE IT
-    // ITS THE SAME SINGLE CALL AS GET ADDRESS, BUT INDEXES ARE DIFFERENT
-    // UNCOMMENT NEXT LINE AND MODIFY IT
-    // return value.substring(WHAT GOES HERE?, WHAT GOES HERE?);
+    return value.substring(value.lastIndexOf(char).vlue.length);
 }
 
 function getCity(value, char, len) {
@@ -67,22 +64,28 @@ function getCity(value, char, len) {
 }
 
 function writeIt(label, value, noComma) {
-    var comma = noComma ? '"' : '",';
-    console.log('\t' + label, '"'+ value + comma)
+    var comma = noComma ? ' " ' : ' ",';
+    console.log('\t\t' + label,' " ' + value + comma)
 };
 
-readFile('govtrack-address.json').then(function(text) {
-    debug(text);
+readFile('address.json').then(function(text) {
+    //debug(text);
     var json = JSON.parse(text.result);
-    debug('\n\nSTRINGIFY\n\n', JSON.stringify(json));
-    var gitUser = [];
+
+    //debug('\n\nSTRINGIFY\n\n', JSON.stringify(json));
+   // var gitUser = [];
     const unknown = 'unknown';
+    const jsonLength = json.objects.length;
     for (var i = 0; i < json.objects.length; i++) {
-        console.log('{');
+        console.log(open);
         writeIt('firstName:', json.objects[i].person.firstname);
-        // GET LAST NAME
+        writeIt('lastName:', json.objects[i].person.lastname);
         writeIt('street:', getAddress(json.objects[i].extra.address, 'W'));
-        // CITY STATE ZIP PHONE WEBSITE
+        writeIt('city:', getCity(json.objects[i].extra.address, 'W'));
+        writeIt('state:', (json.objects[i].state));
+        writeIt('zip:', (json.objects[i].zip));
+        writeIt('phone:', (json.objects[i].phone));
+        writeIt('website:', (json.objects[i].website));
         writeIt('email:', '');
         writeIt('contact:', json.objects[i].extra.contact_form || '', true);
         console.log('},');

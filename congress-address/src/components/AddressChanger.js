@@ -12,6 +12,7 @@ import AddressShow from './AddressShow';
 import Address from './Address';
 import ReactDOM from 'react-dom';
 import App from './App';
+import '../css/App.css';
 
 ReactDOM.render(
     <div>
@@ -27,20 +28,24 @@ class AddressChanger extends Address {
     //lots of stuff to go here
 
 
-
+/*
     getAddress = () => {
         this.setState({
             address: address
         })
-    };
+    };*/
 
     render(){
         if (!this.quiet) { console.log("ADDRESS RENDER"); }
         return (
             <div className="App">
-                <Address />
+                <AddressEdit
+                address={this.state.address}
+                onAddressChange={this.onAddressChange}
+                onNameChange={this.onNameChange}
+                />
             </div>
         );
     }
 }
-export default Address
+export default AddressChanger;

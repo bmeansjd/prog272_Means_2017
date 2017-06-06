@@ -1,25 +1,25 @@
-/**
- * Created by bcuser on 4/17/17.
- */
-import logo from '../images/logo.svg';
 import React, {Component} from 'react';
-import'../css/App.css';
+import logo from '../images/goldfish.svg';
+import {  Jumbotron } from 'react-bootstrap';
 
-class Elfheader extends Component {
+class ElfHeader extends Component {
 
     render() {
 
-
         return (
+            <div>
 
-            <div className="App">
-                <div className="App-header">
-                    <img src={logo} className="App-logo" alt="logo"/>
-                    <h2>Welcome to Prog272</h2>
-                </div>
+                <Jumbotron>
+
+                    <div>
+                        <img src={logo} className='App-logo' alt='logo'/>
+                        <h2>Welcome to Prog272</h2>
+                    </div>
+
+                </Jumbotron>
             </div>
-        )
-            ;
+        );
     }
 }
-export default Elfheader;
+
+export default ElfHeader;

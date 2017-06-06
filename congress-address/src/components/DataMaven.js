@@ -15,41 +15,90 @@ class DataMaven extends Component {
 
 
 
-    it('renders and displays a Router', () => {
-     const wrapper = shallow(<DataMaven  />);
-     elfDebug.getAll(wrapper);
-     var router = wrapper.find('Router');
-     expect(router.length).toEqual(1);
+address.zip = 'Oh No Bad Case';
+
+}
+this.setState({
+    address:address
+});
+
+const address = this.props.addressList[0];
+this.state = {
+    firstName: address.firstName,
+    lastName: address.lastName,
+    street: address.street,
+    city: address.city,
+    state: address.state,
+    zip: address.zip,
+    phone: address.phone,
+    website: address.website
+}
+}
+
+setAddress = () => {
+    const address = this.props.addressList[1];
+
+    this.setState({
+        firstName: address.firstName,
+        lastName: address.lastName,
+        street: address.street,
+        city: address.city,
+        state: address.state,
+        zip: address.zip,
+        phone: address.phone,
+        website: address.website
+    })
+};
+
+fetchAddress = () => {
+    const that = this;
+
+    fetch('./addresses.json').then(function(data) {
+        const addresses = data.json();
+        console.log(addresses);
+        return addresses;
+    }).then(function (data) {
+        console.log(JSON.stringify(data, null, 4));
+        that.addresses = data;
+        that.setLocalStorage();
+    }).catch(function (err) {
+        logger.log(err);
+    })
+
+};
+
+
+ render(){
+    return (
+
+       //<Router>
+           <div className="container">
+             <ElfHeader/>
+              <ElfMenu/>
+
+          <Route exact path='/' render={(props)=>(
+             <Address {...props}
+                onAddressChange={this.onAddressChange}
+                 address{this.state.address}
+                 />
+          )}/>
+               <Route path = '/edit' render={(props)=>(
+               <AddressEdit{...props}
+                   address={this.state.address}
+                           onAddressChange{this.onAddressChange}
+                   onNameChange={this.onNameChange()}
+                           />
+               )}/>
+                        /* <Route exact path='/' component={Address}/>
+                            <Route path='/edit' component={AddressChanger}/>*/
+                <Route path='/small' component={SmallNumbers}/>
+              </div>
+            //</Router>
+              );
+
      });
-
-
-    render() {
-        return (
-
-
-            <Router>
-                <div>
-                    <ElfHeader/>
-                    <ElfMenu/>
-                    <div>
-                        <Route exact path='/' render={(props(
-                            <Address {props}
-                                     onAddressChange={this.onAddressChange}
-                                     onNameChange={this.onNameChange}
-
-                            <Route exact path='/' component={Address}/>
-                            <Route path='/edit' component={AddressChanger}/>
-                            <Route path='/small' component={SmallNumbers}/></div></div>DIV>
-                            </Router></div>
-
-
-
-                            );
-                        }
-         }
-
-
-                        export default DataMaven;*/
+ }
+  export default DataMaven;
 /**
  * Created by bcuser on 5/30/17.
  */
