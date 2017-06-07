@@ -1,82 +1,176 @@
-import React, {Component}from 'react';
-// TODO: Find index.css with correct relative path
-import '../css/index.css';
+
+import React, {Component} from 'react';
+import '../css/App.css';
+import AddressShow from './AddressShow';
+import {getByIndex, saveByIndex} from '../assets/local-storage.js';
 import 'whatwg-fetch';
-import ElfLogger from './elf-logger';
-const logger = new ElfLogger();
+import Logger from '../assets/ElfLogger.js';
+import DataLoader from '../assets/DataLoader';
+const dataLoader = new DataLoader();
+const detailLogger = new Logger('data-loader', 'yellow', 'green', '18px');
+let addressLength = 0;
 
+/*borrowed from other (Jeff/Andrew) students to test*/
+
+// TODO: rename to avoid collisions
 class Address extends Component {
+    constructor() {
+        super();
+        this.quiet = true;
 
-    constructor(props) {
-        super(props);
-        logger.log('Constructor called');
+        const that = this;
+        dataLoader.loadAddresses(function(addressCount) {
+            if (!addressCount) {
+                throw new Error('Cannot get address count in address.js');
+            }
+            that.addressCount = addressCount;
+            addressLength = addressCount - 1;
 
-      /* /!* // TODO: Throw exception if addressList is undefined
-        if (!this.props.addressList) {
-            throw new Error('Elf error, no addressList in ' + *!/this.constructor.name);*/
-        }
-/*
+        });
 
-        const address = this.props.addressList[0];
-        this.state = {
-            firstName: address.firstName,
-            lastName: address.lastName,
-            street: address.street,
-            city: address.city,
-            state: address.state,
-            zip: address.zip,
-            phone: address.phone,
-            website: address.website
-        }
-    }
+        // initialize the state to items in addressList index 0
+        that.addressIndex = 0;
 
-    setAddress = () => {
-        const address = this.props.addressList[1];
+        that.state = {
+
+            address: {
+                'firstName': 'Lamar',
+                'lastName': 'Alexander',
+                'street': '455 Dirksen Senate Office Building',
+                'city': 'Washington DC',
+                'state': 'TN',
+                'zip': ' 20510',
+                'phone': '202-224-4944',
+                'web': 'https://www.alexander.senate.gov/public'
+            }
+
+        };
+
+        this.firstAddress = this.firstAddress.bind(this);
+        this.lastAddress = this.lastAddress.bind(this);
+        this.onAddressButtonClick = this.onAddressButtonClick.bind(this);
+        this.onAddressFieldChange = this.onAddressFieldChange.bind(this);
+    }// end constructor
+
+    // first address button function
+    firstAddress(event) {
+        this.addressIndex = 0;
+
+        const beginningAddress = getByIndex(this.addressIndex);
 
         this.setState({
-            firstName: address.firstName,
-            lastName: address.lastName,
-            street: address.street,
-            city: address.city,
-            state: address.state,
-            zip: address.zip,
-            phone: address.phone,
-            website: address.website
-        })
+            address: beginningAddress
+        });
+    };//first function setAddress
+
+    onAddressButtonClick(event) {
+        detailLogger.log('onAddressChange called with', event.target.id);
+        //console.log(this.addressIndex);
+        if (event.target.id.startsWith('prev')) {
+            if (this.addressIndex > 0) {
+                this.addressIndex -= 1;
+                //console.log(this.addressIndex);
+            }
+
+        } else {
+            if (this.addressIndex < this.addressCount - 1) {
+                this.addressIndex += 1;
+                //console.log(this.addressIndex);
+            }
+
+        }
+
+        detailLogger.log('addressIndex', this.addressIndex);
+        const address = getByIndex(this.addressIndex);
+
+        this.setState({
+            address: address
+        });
     };
 
-    fetchAddress = () => {
-        const that = this;
+    lastAddress(event) {
 
-        fetch('./addresses.json').then(function(data) {
-            const addresses = data.json();
-            console.log(addresses);
-            return addresses;
-        }).then(function (data) {
-            console.log(JSON.stringify(data, null, 4));
-            that.addresses = data;
-            that.setLocalStorage();
-        }).catch(function (err) {
-            logger.log(err);
-        })
+        this.addressIndex = addressLength;
 
-    };
-*/
+        const finalAddress = getByIndex(this.addressIndex);
+        //console.log(this.addressIndex);
+        //console.log(finalAddress);
 
+        this.setState({
+            address: finalAddress
+        });
+    };//end function lastAddress
 
-    // TODO: Use an ID not a className to identify this button
+    onAddressFieldChange(event) {
+        const updateAddressField = getByIndex(this.addressIndex);
+        //console.log(event.target.value);
+        //console.log(this.addressIndex);
+        //console.log(getByIndex(this.addressIndex));
+        console.log(updateAddressField);
+        switch (event.target.id) {
+            case 'firstName':
+                updateAddressField.firstName = event.target.value;
+                saveByIndex(updateAddressField, this.addressIndex);
+                break;
+            case 'lastName':
+                updateAddressField.lastName = event.target.value;
+                saveByIndex(updateAddressField, this.addressIndex);
+                break;
+
+            case 'street':
+                updateAddressField.streetAdr = event.target.value;
+                saveByIndex(updateAddressField, this.addressIndex);
+                break;
+
+            case 'city':
+                updateAddressField.city = event.target.value;
+                saveByIndex(updateAddressField, this.addressIndex);
+                break;
+
+            case 'state':
+                updateAddressField.state = event.target.value;
+                saveByIndex(updateAddressField, this.addressIndex);
+                break;
+
+            case 'zip':
+                updateAddressField.zip = event.target.value;
+                saveByIndex(updateAddressField, this.addressIndex);
+                break;
+
+            case 'phone':
+                updateAddressField.phone = event.target.value;
+                saveByIndex(updateAddressField, this.addressIndex);
+                break;
+
+            case 'web':
+                updateAddressField.web = event.target.value;
+                saveByIndex(updateAddressField, this.addressIndex);
+                break;
+
+            default:
+                throw new Error('OH NO BAD CASE in Address onNameChange');
+        }// end switch
+
+        this.setState({
+            address: updateAddressField
+        });// end setState
+
+    };// end onAddressChange
+
     render() {
-        logger.log('ADDRESS RENDER')
-        return (
-            <div>
-                <AddressShow
 
-                  address={this.props.address}
-                onAddressChange={this.props.onAddressChange}
-/>
+        return (
+            <div className='App'>
+                <AddressShow
+                    address={this.state.address}
+                    onFirstAddress={this.firstAddress}
+                    addressButtonClick={this.onAddressButtonClick}
+                    onLastAddress={this.lastAddress}
+                />
+
             </div>
-        )
-    };
+        );
+    }
 }
 
 export default Address;

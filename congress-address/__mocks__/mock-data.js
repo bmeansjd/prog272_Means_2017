@@ -1,5 +1,5 @@
 /**
- * Created by charlie on 4/18/17.
+ * Created by bcuser on 5/17/17.
  */
 
 const getData = (url) => {
@@ -47,6 +47,4 @@ const getData = (url) => {
     }
 };
 
-export default getData;/**
- * Created by bcuser on 5/30/17.
- */
+export default getData;

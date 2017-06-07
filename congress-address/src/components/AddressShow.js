@@ -1,81 +1,73 @@
-import React,{Component}from 'react';
-//import ReactDOM from 'react-dom';
-//import App from './App';
-//import addresses from '../address-list';
-import {Button} from 'react-bootstrap';
-import '../css/index.css';
-//import '../App.css';
 
+import React, {Component} from 'react';
+import '../css/App.css';
+import './Address';
 
 class AddressShow extends Component {
-
-
     constructor(props) {
         super(props);
-        this.quiet=true;
+        this.quiet = true;
         this.log('CONSTRUCTOR', this.props.address);
-    }
+        /*console.log('TEST PROPS' , props);
+         if (!this.props.address)
+         {
+         throw new Error('No props in Addresses');
+         }
 
-    log(message, message2='', message3 =''){
-        if(!this.quiet) {
-         const label = this.constructor.name + ':';
-          console.log(label, message, message2, message3);
+         this.log(props); */
+
+    }// end constructor
+
+    log(message, message2 = '', message3 = '') {
+
+        if (!this.quiet) {
+            const label = this.constructor.name + ': ';
+            console.log(label, message, message2, message3);
         }
-
-    }
+    }// end log
 
     render() {
-        this.log("RENDER");
-
+        this.log('SHOW ADDRESS RENDER');
         return (
-            <form className='navbar-form' action=''>
-              <div id='addressShowRender' className='row'>
-               <div className ="col-sm-12">
-                <p className='elf-p'>
-                    firstName: {this.props.address.firstName}
+            <div id='addressShowRender' className='App'>
+
+                <p className='App-intro'>
+                    First Name: {this.props.address.firstName}
                 </p>
-                   <p className='elf-p'>
-                   lastName: {this.props.address.lastName}
-                   </p>
-                   <p className='elf-p'>
-                       street: {this.props.address.street}
-                   </p>
-                   <p className='elf-p'>
-                       city: {this.props.address.city}
-                   </p>
-                   <p className='elf-p'>
-                       state: {this.props.address.state}
-                   </p>
-                   <p className='elf-p'>
-                       zip: {this.props.address.zip}
-                   </p>
-                   <p className='elf-p'>
-                       phone: {this.props.address.phone}
-                   </p>
-                   <p className='elf-p'>
-                       website: {this.props.address.website}
-                   </p>
-                   <Button bsStyle = 'primary' id='decrementAddressClick' onClick ={this.props.onAddressChange}/>
-                   <Button bsStyle = 'success' id='incrementAddressClick' onClick={this.props.onAddressChange}/>
+                <p className='App-intro'>
+                    Last Name: {this.props.address.lastName}
+                </p>
 
-                  </div>
-                   </div>
+                <p className='App-intro'>
+                    Street Address: {this.props.address.street}
+                </p>
+                <p className='App-intro'>
+                    City & District: {this.props.address.city}
+                </p>
+                <p className='App-intro'>
+                    State Represented: {this.props.address.state}
+                </p>
+                <p className='App-intro'>
+                    Zip Code: {this.props.address.zip}
+                </p>
+                <p className='App-intro'>
+                    Phone Number: {this.props.address.phone}
+                </p>
 
+                <p className='App-intro'>
+                    Web Address: {this.props.address.web}
+                </p>
+                <button id='firstShowAddress' onClick={this.props.onFirstAddress} className='firstAdr'>First Address</button>
+                <button id='prevShowAddress' onClick={this.props.addressButtonClick} className='prevAdr'>Previous Address</button>
+                <button id='nextShowAddress' onClick={this.props.addressButtonClick} className='nextAdr'>Next Address</button>
+                <button id='lastShowAddress'onClick={this.props.onLastAddress} className='lastAdr'>Last Address</button>
+                <br/>
+                <br/>
+            </div>
+        ); // end return
 
-                          /* {/*
-                <AddressEdit
-                    address={this.state.address}
-                    onAddressChange={this.onAddressChange}
-                    onNameChange={this.onNameChange}
-                />
-                <AddressShow
-                    address={this.state.address}
-                    onAddressChange={this.onAddressChange}/>}
-                />*/
+    }// end render
 
-            </form>
-        );
-    }
-}
+}// end class AddressShow
 
 export default AddressShow;

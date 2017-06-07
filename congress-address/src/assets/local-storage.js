@@ -1,3 +1,7 @@
+/**
+ * Created by bcuser on 6/6/17.
+ */
+
 
 const ELF_TAG = 'elf';
 
@@ -36,4 +40,6 @@ function clearLocalStorage() {
     localStorage.clear();
 }
 
-export {saveByIndex, getByIndex, removeElfKeys, clearLocalStorage};
+export {saveByIndex, getByIndex,
+    removeElfKeys, clearLocalStorage};
+

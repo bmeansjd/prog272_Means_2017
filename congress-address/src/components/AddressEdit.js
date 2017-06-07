@@ -1,53 +1,71 @@
-/**
- * Created by bcuser on 5/17/17.
- */
-import React, {Component}from 'react';
-//import ReactDOM from 'react-dom';
-//import App from './App';
-import addresses from '../address-list';
-import '../css/index.css';
-//import '../App.css';
 
-
-class AddressShow extends Component {
-    constructor(props) {
-        super(props);
-        console.log('SHOW ADDRESS CONSTRUCTOR', this.props.address);
-    }
-
-    onNameChange = (event) => {
-        this.log("ON NAME CHANGE");
-        const address = addresses[this.addressIndex];
-        switch (event.target.id) {
-            case 'elfFN':
-                address.firstName = event.target.value;
-                break;
-            case 'elfLN':
-                address.lastName = event.target.value;
-                break;
-            // ETC
-            default:
-                throw new Error('OH NO BAD CASE in Address onNameChange');
-        }
-        this.setState({
-            address: address
-        })
-    };
-
+import React, {Component} from 'react';
+import '../css/App.css';
+import './Address';
+//import Logger from '../assets/ElfLogger.js';
+//const detailLogger = new Logger('data-loader', 'yellow', 'green', '18px');
+//check video Brenda
+class AddressEdit extends Component {
     render() {
-        this.log("SHOW ADDRESS RENDER");
-
+        // this.log('SHOW ADDRESS RENDER');
         return (
-            <div className="App">
-                <p className="App-intro">
-                    firstName: {this.props.address.firstName}
-                </p>
+            <div id='addressEditRender' className='App'>
+                <br/>
+                <br/>
 
-                // CODE OMITTED HERE
+                <input id='firstName'
+                       className='App-intro'
+                       value={this.props.address.firstName}
+                       onChange={this.props.onAddressFieldChange}/>
+                <br/>
+
+                <input id='lastName'
+                       className='App-intro'
+                       value={this.props.address.lastName}
+                       onChange={this.props.onAddressFieldChange}/>
+
+                <br/>
+                <input id='street'
+                       className='App-intro'
+                       value={this.props.address.street}
+                       onChange={this.props.onAddressFieldChange}/>
+                <br/>
+                <input id='city'
+                       className='App-intro'
+                       value={this.props.address.city}
+                       onChange={this.props.onAddressFieldChange}/>
+                <br/>
+                <input id='state'
+                       className='App-intro'
+                       value={this.props.address.state}
+                       onChange={this.props.onAddressFieldChange}/>
+                <br/>
+                <input id='zip'
+                       className='App-intro'
+                       value={this.props.address.zip}
+                       onChange={this.props.onAddressFieldChange}/>
+                <br/>
+                <input id='phone'
+                       className='App-intro'
+                       value={this.props.address.phone}
+                       onChange={this.props.onAddressFieldChange}/>
+                <br/>
+                <input id='web'
+                       className='App-intro'
+                       value={this.props.address.web}
+                       onChange={this.props.onAddressFieldChange}/>
+                <br/>
+                <br/>
+                <button id='firstEditAddress' onClick={this.props.onFirstAddress} className='firstAdr'>First Address</button>
+                <button id='prevEditAddress' onClick={this.props.addressButtonClick} className='prevAdr'>Previous Address</button>
+                <button id='nextEditAddress' onClick={this.props.addressButtonClick} className='nextAdr'>Next Address</button>
+                <button id='lastEditAddress' onClick={this.props.onLastAddress} className='lastAdr'>Last Address</button>
+                <br/>
+                <br/>
 
             </div>
-        );
-    }
+        );// end return
+    }// end render
+}// end class AddressEdit
 
-}
-export default AddressShow;
+export default AddressEdit;
