@@ -9,7 +9,7 @@ import AddressEdit from './AddressEdit';
 import SmallNumbers from './SmallNumbers';
 import AddressMenu from './AddressMenu';
 import ElfHeader from './ElfHeader';
-import {getByIndex, saveByIndex} from '../assets/local-storage.js';
+import {getByIndex, saveByIndex} from '../assets/elf-local-storage.js';
 import DataLoader from '../assets/DataLoader';
 import Logger from '../assets/ElfLogger.js';
 import {
@@ -50,6 +50,8 @@ class DataMaven extends Component {
         this.onAddressButtonClick = this.onAddressButtonClick.bind(this);
         this.onAddressFieldChange = this.onAddressFieldChange.bind(this);
     }// end constructor
+//component did mount here
+    //insert loadfrom database here
 
     // first address button function
     firstAddress(event) {
