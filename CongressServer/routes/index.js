@@ -15,6 +15,17 @@ function checkConnection() {
     }
 }
 
+router.get('/', function(req, res) {
+    'use strict';
+    //res.render('index', {title: 'CongressServer'});
+    res.loadFile('index.html');
+});
+
+router.get('/admin', function(req, res) {
+    'use strict';
+    res.render('index', {title: 'CongressServer'});
+});
+
 router.get('/all-data', function(request, response) {
     'use strict';
     console.log('AllData route invoked.');

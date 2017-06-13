@@ -1,7 +1,4 @@
 /**
- * Created by bcuser on 5/24/17.
- */
-/**
  * Created by charlie on 4/18/17.
  *
  * This logger is designed to be used with React. The doc is here: http://bit.ly/elven-utils
@@ -62,7 +59,7 @@ const ElfLogger = class {
 
     setLogger(newValue) {
         this.logger = newValue;
-    };
+    }
 };
 
 export default ElfLogger;
