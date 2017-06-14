@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
     res.render('index', {title: 'CongressServer'});
 });
 
-function checkConnection() {
+function checkConnection(response, callback) {
     if (!connect.connected) {
         connect.doConnection('mlab');
     }
@@ -17,7 +17,7 @@ function checkConnection() {
 
 router.get('/', function(req, res) {
     'use strict';
-    //res.render('index', {title: 'CongressServer'});
+    es.render('index', {title: 'CongressServer'});
     res.loadFile('index.html');
 });
 
@@ -67,11 +67,6 @@ router.get('/update', function(request, response) {
 
 
 });
-
-
-
-
-module.exports =router;
 
 
 

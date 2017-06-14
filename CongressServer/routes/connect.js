@@ -42,7 +42,7 @@ const connect = {
             console.log('Opened connection to mongo');
         });
     },
-
+//
     // mongodb://<dbuser>:<dbpassword>@ds028540.mlab.com:28540/meansdb
     mlabConnect: function() {
         'use strict';
